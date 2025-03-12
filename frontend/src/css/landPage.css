@@ -1,0 +1,322 @@
+/* * Header */
+
+    header {
+        position: relative; /* Permite posicionar elementos encima del fondo */
+        width: 100%;
+        height: 300px; /* Ajusta la altura del encabezado */
+        background-image: url(/frontend/images/Header.jpeg);
+        background-size: 100% 100%;
+        border-bottom-right-radius: 100px;
+    }
+
+    h1{font-size: 20px;}
+    h2{text-align: center;}
+
+    #companyName{
+        padding-left: 300px;
+        font-family: "Lexend Deca";
+        font-size: 50px;
+        background: linear-gradient(90deg, transparent, #ff1, transparent, #ff1, transparent, #ff1);
+        background-size: 200% 200%; /*background box*/
+        -webkit-background-clip: text; /*? copy background colo into text*/
+        -webkit-text-stroke: 6px transparent; /*stroke size and color (transparent for background gradient)*/
+        animation: gradient 10s ease infinite; /*? duration and style animation*/
+    }
+    /*h1 color animation*/
+    @keyframes gradient{
+        0%, 100%{background-position: 0% 50%;}
+        50%{background-position: 100% 50%}
+    }
+
+    #logoLP{
+        position: absolute;
+        top: 5%; /* Ajusta la posición vertical de la imagen superior izquierda */
+        left: 1%; /* Ajusta la posición horizontal de la imagen superior izquierda */
+        width: 175px; /* Ajusta el ancho de la imagen superior izquierda */
+        height: auto; /* Mantiene la proporción de la imagen */
+    }
+
+    .menu {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: rgba(33, 33, 33, 75%);
+        width: 50%;
+        float: right;
+        border-bottom-left-radius: 20px;
+        position: -webkit-sticky; /* Safari */
+        position: sticky;
+        top: 0;
+    }
+
+    .menu a {
+        float: left;
+        color: #fff;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+    }
+
+    .menu li a:hover {
+        background-color: #222;
+        color: #9df;
+    }
+
+
+
+/* * Body */
+
+    body{font-family: "Lexend Deca";}
+
+    .searchBox{
+        display: flex;
+        margin: 5% auto 5% auto;
+        border-radius: 30px;    
+        width: 425px;
+        box-shadow: 1px 5px 20px 10px rgba(0, 0, 0, 0.25);
+    }
+
+    #searchBar{
+        padding: 10px;
+        border: 0;
+        border-radius: 30px 0 0 30px;
+        font-size: 15px;
+        width: 200px;
+        background-color: #fff;
+    }
+
+    #btnSearch{
+        border: 0;
+        margin: 0;
+        padding-left: 5px;
+        padding-right: 5px;
+        border-left: 1px solid #ddd;
+        border-right: 1px solid #ddd;
+        background-color: #fff;
+        cursor: pointer;
+    }
+
+    #btnSearch:hover{
+        background-color: #ddd;
+        color: #9df;
+    }
+
+    #btnSearch img{
+        padding: 0px;
+        width: auto;
+        height: 30px;
+    }
+
+    #searchFilter{
+        width: auto;
+        border: 0;
+        box-sizing: border-box;
+    }
+
+    /*Luches Box*/
+    .tagBox{
+        display: flex;
+        justify-content: space-between;
+        padding: 20px;
+    }
+
+    .carouselArrow{
+        left: 10%;
+        height:20px;
+        width: 20px;
+        background-color: #333;
+        cursor: pointer;
+    }
+
+    #carouselLeft{clip-path: polygon(0 50%, 100% 0, 100% 100%);}
+
+    #carouselRight{clip-path: polygon(100% 50%, 0 0, 0 100%);}
+
+    .card{
+        margin: 20px;
+        padding: 30px;
+        border-radius: 40px 40px 0 40px;
+        box-sizing:border-box;
+        border: 2px solid #000;
+        transition: 0.5s;
+    }
+        .card:hover{box-shadow: 0px 0px 20px #ff1;}
+
+        input{text-align: center;}
+        select{text-align: center;}
+
+        .fieldBox{
+            display: flex;
+            align-items: center;
+            margin: 20px 0 20px 0;
+        }
+
+    .noBorderColor{  
+        border: 0 solid #000;
+        background-color: transparent;
+    }
+
+    .deviceHeader{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+        .deviceID{
+            margin-right: 5px;
+            font-weight: 700;
+        }
+
+        #deviceName{margin-right: 20px;}
+
+    table {
+        border-collapse: separate;
+        border-spacing: 16px; /* Separación de pocos pixeles */
+        text-align: center; /* Centrar el texto */
+    }
+
+    tr{border-bottom: 1px solid black;}
+
+        .plush img{
+            height: 50px;
+            margin-inline: 30px;
+            cursor: pointer;
+        }
+
+        .zoom img{
+            height: 30px;
+            width: auto;
+            cursor: pointer;
+        }
+
+        .details{
+            color: #888;
+            padding: 0;
+            display:flex;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .details img{
+            display:flex;
+            align-items: center;
+            height: 15px;
+            width: auto;
+        }
+
+        .priceBox{
+            display:flex;
+            margin-top: 10px;
+        }
+
+        .priceBox .priceTxt1{margin-right: 100px;}
+
+        .priceBox .priceTxt2{margin-right: 100px;}
+
+        .addRemoveField{
+            height: 35px;
+            width: auto;
+            margin-left: 10px 10px;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        
+        .addRemove {
+            transition: 0.5s;
+            font-weight: 700;
+            width: 50px;
+            color: #666;
+            font-size: large;
+            box-shadow: 0 0 20px #ccc;
+            border: 0px solid #000;
+            border-radius: 20px;
+            margin: 10px 30px 10px 30px;
+            padding: 10px 0 10px 0;
+            cursor: pointer;
+        }
+            #add{background-color: #9fc;}
+            #remove{background-color: #faa;}
+
+        .addRemove:hover {
+            color: #000;
+            box-shadow: #000;
+        }
+            #add:hover{box-shadow: 0px 0px 20px #0f8;}
+            #remove:hover{box-shadow: 0px 0px 20px #f00;}
+
+
+
+/* * Footer */
+
+    footer{
+        box-shadow: 0 0 30px #777;
+        text-align: center;
+    }
+
+    /* Estilos para las redes sociales */
+    .redes-sociales {
+        list-style: none; /* Elimina los puntos de lista por defecto */
+        margin: 0;
+        padding: 0;
+    }
+
+    a{
+        text-decoration: none;
+        color: #000;
+    }
+
+    .redes-sociales li {
+        display: inline-block; /* Permite que los elementos se coloquen en línea */
+        margin-right: 15px; /* Espacio entre elementos de las redes sociales */
+    }
+
+    .redes-sociales img {
+        width: 30px; /* Ancho de la imagen */
+        height: 30px; /* Alto de la imagen */
+        margin-right: 5px; /* Espacio entre la imagen y el texto */
+    }
+
+    /* Estilos para la lista de servicios */
+    .lista-servicios {
+        list-style: none; /* Elimina los puntos de lista por defecto */
+        margin: 0;
+        padding: 0;
+    }
+
+    .lista-servicios li {
+        margin-bottom: 10px; /* Espacio entre elementos de la lista */
+    }
+
+    .lista-servicios i {
+        margin-right: 10px; /* Espacio entre el icono y el texto */
+    }
+
+    /* Estilos para LucheShop */
+    #companyLogo {
+        width: 30px; /* Ancho del logo */
+        height: auto;
+    }
+
+
+    label{width: 100px;}
+
+    .inputLarge{
+        margin-left: 5%;
+        padding: 10px;
+        width: 55%;
+        border-radius: 20px;
+    }
+
+    #ip{
+        margin-left: 25%;
+        width: 160px;
+        overflow: hidden;
+    }
+
+    .inputShort{
+        margin-left: 40%;
+        border-radius: 20px;
+        padding: 10px;
+        width: 30%;
+    }

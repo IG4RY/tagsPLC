@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="apple-touch-icon" sizes="57x57" href="/images/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/images/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/images/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/images/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/images/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/images/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/images/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/images/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="/images/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/images/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/images/favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/landPage.css"> <!--CSS Style call-->
+    <script type="text/javascript" src="/backend/src/js/landPage.js"></script> <!--JavaScript functions call-->>
+    
+    <title>Devices</title>
+</head>
+<body>
+    <header>
+        <img src="/frontend/images/Osito.png" id="logoLP" alt="LucheStore Logo">
+        <h1>
+            <label id="companyName">Toman JKI</label>
+            <ul class="menu">
+                <li><a href="landPage">Luches</a></li>
+                <li><a href="addTag.html">AddTag</a></li>
+                <li><a href="">Raza</a></li>            
+                <li><a href="">Acerca</a></li>             
+            </ul>
+        </h1>
+    </header>
+
+    <div class="searchBox">
+        <input type="text" id="searchBar" placeholder="Search device...">
+        <button id="btnSearch"><img src="/frontend/images/tools/Lupa.png" alt="loupe"></button>
+        <select id="searchFilter">
+            <optgroup label="Company">
+                <option value="abb">ABB (Asea Brown Boveri)</option>
+                <option value="allenBradley">Allen-Bradley</option>
+                <option value="beckhoff">Beckhoff</option>
+                <option value="delta">Delta</option>
+                <option value="eaton">Eaton</option>
+                <option value="fatek">FATEK</option>
+                <option value="festo">Festo</option>
+                <option value="ge">General Electric (GE)</option>
+                <option value="hitachi">Hitachi</option>
+                <option value="honeywell">Honeywell</option>
+                <option value="keyence">Keyence</option>
+                <option value="mitsubishi">Mitsubishi</option>
+                <option value="omron">Omron</option>
+                <option value="setex">SETEX</option>
+                <option value="siemens">Siemens</option>
+                <option value="se">Schneider Electric</option>
+                <option value="unitronics">Unitronics</option>
+                <option value="wago">Wago</option>
+                <option value="wecon">Wecon</option>
+                <option value="xinje">XINJE</option>
+            </optgroup>
+            <optgroup label="Protocol">
+                <option value="modbus">Modbus</option>
+            </optgroup>
+        </select>
+    </div>
+
+    <div class="tagBox">
+        <button class="carouselArrow" id="carouselLeft"></button>
+
+        <div class="card">
+            <div class="deviceHeader">
+                <div>
+                    <label class="deviceID">Device</label>
+                    <br>
+                    <label id="deviceName">Puentecito</label>
+                </div>
+                <button class="noBorderColor plush"><img src="/frontend/images/devices/centricaPwrBridge.png" alt="plush1"></button>
+                <div>
+                    <label class="deviceID">ID</label>
+                    <br>
+                    <label id="idip">192.168.100.55 </label>
+                </div>
+            </div>
+            
+            <table id="tagTable">
+                <thead>
+                    <th>Tag Name
+                        <select class="table-filter">
+                            <option value=""></option>
+                            <option value="az">A-Z</option>
+                            <option value="za">Z-A</option>
+                        </select>
+                    </th>
+                    <th>Address
+                        <select class="table-filter">
+                            <option value=""></option>
+                            <option value="ipa">A</option>
+                            <option value="ipb">B</option>
+                            <option value="ipc">C</option>
+                        </select>
+                    </th>
+                    <th>Value
+                        <select class="table-filter">
+                            <option value=""></option>
+                            <option value="ab">^</option>
+                            <option value="ba">v</option>
+                            <option value="1.5">+1.5</option>
+                            <option value="1.51">-1.5</option>
+                        </select>
+                    </th>
+                    <!--<th>Scale
+                        <select class="table-filter">
+                            <option value=""></option>
+                            <option value="ab">^</option>
+                            <option value="ba">v</option>
+                            <option value="1.5">+1.5</option>
+                            <option value="1.51">-1.5</option>
+                        </select>
+                    </th>-->
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Tag 1</td>
+                        <td>Add</td>
+                        <td>x</td>
+                        <!-- <td>y</td> -->
+                    </tr>
+                    <tr>
+                        <td>Tag 2</td>
+                        <td>Add</td>
+                        <td>x</td>
+                        <!-- <td>y</td> -->
+                    </tr>
+                    <tr>
+                        <td>Tag 3</td>
+                        <td>Add</td>
+                        <td>x</td>
+                        <!-- <td>y</td> -->
+                    </tr>
+                    <tr>
+                        <td>Tag 4</td>
+                        <td>Add</td>
+                        <td>x</td>
+                        <!-- <td>y</td> -->
+                    </tr>
+                </tbody>
+              </table>
+
+              <div class="addRemoveField">
+                <a href="addTag.html"><button class="addRemove" id="add">+</button></a>
+                <a href="addTag.html"><button class="addRemove" id="remove">—</button></a>
+              </div>
+        </div>
+
+        <div class="card">
+            <h2>Add Tag</h2>
+            <form action="./dataResume.html">
+                <div class="fieldBox">
+                    <label>Name</label>
+                    <input type="text" class="inputLarge" id="name" name="tagName" placeholder="Tagcito" required>
+                </div>
+    
+                <div class="fieldBox">
+                    <label>Description</label>
+                    <textarea class="inputLarge" id="desc" name="tagDesc" cols="20" rows="4" wrap="hard" placeholder="Mide mA" required></textarea>
+                </div>
+    
+                <div class="fieldBox">
+                    <label>Address</label>
+                    <input type="text" class="inputLarge" id="ip" name="tagIP" placeholder="192.168.100.55" required pattern="^((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$">
+                </div>
+    
+                <hr>
+    <!-- 
+                <div class="fieldBox">
+                    <label>Data Type</label>
+                    <select class="inputLarge" id="ip" required>
+                        <optgroup label="Primitive">
+                            <option value="int">Int</option>
+                            <option value="float">Float</option>
+                            <option value="char">Double</option>
+                            <option value="bool">Boolean</option>
+                            <option value="date">Date</option>
+                            <option value="time">Time</option>
+                            <option value="datetime">DateTime </option>
+                        </optgroup>
+                        <optgroup label="Composite">
+                            <option value="string">String</option>
+                            <option value="array">Array</option>
+                            <option value="list">List</option>
+                            <option value="dictionary">Dictionary</option>
+                            <option value="objeto">Object</option>
+                            <option value="tuple">Tuple</option>
+                            <option value="function">Function</option>
+                            <option value="record">Record</option>
+                            <option value="set">Set</option>
+                        <optgroup label="Structured">
+                            <option value="enum">Enum</option>
+                            <option value="class">Class</option>
+                            <option value="delegate">Delegate</option>
+                            <option value="struct">Struct</option>
+                            <option value="union">Union</option>
+                            <option value="interface">Interface</option>
+                        </optgroup>
+                        <optgroup label="Others">
+                            <option value="null">Null</option>
+                            <option value="undefined">Undefined</option>
+                            <option value="void">Void</option>
+                        </optgroup>
+                    </select>
+                </div>
+    -->
+                <div class="fieldBox">
+                    <label>Data Type</label>
+                    <select class="inputLarge" id="type" name="tagType" required>
+                        <optgroup label="Numeric">
+                            <option value="int">INT</option> <!-- INT16, UINT16 -->
+                            <option value="float">FLOAT</option> <!-- FLOAT32 -->
+                            <option value="real">REAL</option>
+                        </optgroup>
+                        <optgroup label="Logic/Binary">
+                            <option value="bool">BOOL</option>
+                            <option value="byn">BYTEA</option>
+                        </optgroup>
+                        <optgroup label="Text">
+                            <option value="char">CHAR</option>
+                            <option value="str">STRING</option>
+                        </optgroup>
+                        <optgroup label="Date/Time">
+                            <option value="date">DATE</option>
+                            <option value="time">TIME</option>
+                            <option value="datime">DATETIME</option>
+                            <option value="intvl">INTERVAL</option>
+                        </optgroup>
+                        <optgroup label="Compuestos">
+                            <option value="array">ARRAY</option>
+                            <option value="list">LIST</option>
+                            <option value="tuple">TUPLE</option>
+                        </optgroup>
+                        <!-- <optgroup label="Structured">
+                            <option value="enum">Enum</option>
+                            <option value="class">Class</option>
+                            <option value="delegate">Delegate</option>
+                            <option value="struct">Struct</option>
+                            <option value="union">Union</option>
+                            <option value="interface">Interface</option>
+                        </optgroup>
+                        <optgroup label="Others">
+                            <option value="null">Null</option>
+                            <option value="undefined">Undefined</option>
+                            <option value="void">Void</option>
+                        </optgroup> -->
+                    </select>
+                </div>
+                
+                <div class="fieldBox">
+                    <label>Scale</label>
+                    <input class="inputShort" type="number" name="tagScale" min="1" value="1" step=".01" required>
+                </div>
+    
+                <div class="fieldBox">
+                    <label>Scan Rate</label>
+                    <input class="inputShort" type="number" name="tagScan" min="500" value="1000" step="any" required>
+                </div>
+                
+                <input type="submit" class="addRemove" id="add" value="+">
+            </form>
+        </div>
+
+        <button class="carouselArrow" id="carouselRight"><img src="/frontend/images/tools/triangleIcon.png" alt="carouselRight"></button>
+    </div>
+
+    <footer>
+        <div class="contenedor-pie">
+            <div class="seccion1">
+                <h2>Redes Sociales</h2>
+                <ul class="redes-sociales">
+                    <li>
+                        <img src="/frontend/images/socialNetworks/Instagram.png" alt="Instagram">
+                        <a href="#">Instagram</a>
+                    </li>
+                    <li>
+                        <img src="/frontend/images/socialNetworks/Pinterest.png" alt="Pinterest">
+                        <a href="#">Pinterest</a>
+                    </li>
+                    <li>
+                        <img src="/frontend/images/socialNetworks/Facebook.png" alt="Facebook">
+                        <a href="#">Facebook</a>
+                    </li>
+                    <li>
+                        <img src="/frontend/images/socialNetworks/Twitter.png" alt="Twitter / X">
+                        <a href="#">Twitter</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="seccion2">
+                <h2>Servicios</h2>
+                <ul class="lista-servicios">
+                    <li><i class="fas fa-chevron-right"></i> Soporte</li>
+                    <li><i class="fas fa-chevron-right"></i> Luche Propio</li>
+                    <li><i class="fas fa-chevron-right"></i> Desarrollo</li>
+                </ul>
+            </div>
+
+            <div class="seccion3">
+                <h2>LucheShop</h2>
+                <img id="companyLogo" src="/frontend/images/Osito.png" alt="Logo LucheShop">
+                <p>&copy; Derechos Reservados</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
