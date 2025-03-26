@@ -4,12 +4,11 @@
         position: relative; /* Permite posicionar elementos encima del fondo */
         width: 100%;
         height: 300px; /* Ajusta la altura del encabezado */
-        background-image: url(/frontend/images/Header.jpeg);
+        background-image: url("/frontend/images/logo/Toman Logo (Black Background).png");
         background-size: 100% 100%;
         border-bottom-right-radius: 100px;
     }
 
-    h1{font-size: 20px;}
     h2{text-align: center;}
 
     #companyName{
@@ -37,6 +36,8 @@
     }
 
     .menu {
+        font-family:Arial, Helvetica, sans-serif;
+        font-size: 20px;
         list-style-type: none;
         margin: 0;
         padding: 0;
@@ -44,13 +45,14 @@
         background-color: rgba(33, 33, 33, 75%);
         width: 50%;
         float: right;
-        border-bottom-left-radius: 20px;
-        position: -webkit-sticky; /* Safari */
+        border-bottom-left-radius: 40px;
         position: sticky;
+        z-index: 100;
         top: 0;
     }
 
     .menu a {
+        align-items: center;
         float: left;
         color: #fff;
         text-align: center;
@@ -58,7 +60,7 @@
         text-decoration: none;
     }
 
-    .menu li a:hover {
+    .menu a:hover {
         background-color: #222;
         color: #9df;
     }
@@ -67,7 +69,10 @@
 
 /* * Body */
 
-    body{font-family: "Lexend Deca";}
+    body{
+        font-family: Arial, sans-serif;
+        margin: 0
+    }
 
     .searchBox{
         display: flex;
@@ -112,6 +117,7 @@
         width: auto;
         border: 0;
         box-sizing: border-box;
+        text-align: justify;
     }
 
     /*Luches Box*/
@@ -145,7 +151,7 @@
 
         input{text-align: center;}
         select{
-            text-align: center;
+            text-align: justify;
             border-style: none;
         }
 
@@ -165,7 +171,7 @@
         justify-content: center;
         align-items: center;
     }
-        .deviceID{
+        .deviceNIP{
             margin-right: 5px;
             font-weight: 700;
         }
@@ -180,7 +186,7 @@
 
     tr{border-bottom: 1px solid black;}
 
-        .plush img{
+        .device img{
             height: 50px;
             margin-inline: 30px;
             cursor: pointer;
@@ -227,6 +233,7 @@
         
         .addRemove {
             transition: 0.5s;
+            align-items: center;
             font-weight: 700;
             width: 50px;
             color: #666;
@@ -297,7 +304,7 @@
 
     /* Estilos para LucheShop */
     #companyLogo {
-        width: 30px; /* Ancho del logo */
+        width: 200px; /* Ancho del logo */
         height: auto;
     }
 

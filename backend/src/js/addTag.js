@@ -16,11 +16,11 @@ addTagForm.addEventListener('submit', function(event){
     addRow.insertCell(4).textContent = tagScale
     addRow.insertCell(5).textContent = tagScan
 
-    addCell.textConcent = tagData.get() // Add the tag in the cell
+    addCell.textContent = tagData.get() // Add the tag in the cell
 
-    addCell = addRow.insertCell(1) // Add the cell in the first column (0,-1)
-    addCell.textConcent = tagData.get('tag') // Add the tag in the cell
+    addCell = addRow.insertCell(1) // Add the cell in the 1st column (0,-1)
+    addCell.textContent = tagData.get('tag') // Add the tag in the cell
 
-    addCell = addRow.insertCell(2) // Add the cell in the first column (0,-1)
-    addCell.textConcent = tagData.get('tag') // Add the tag in the cell
+    addCell = addRow.insertCell(2) // Add the cell in the 2nd column (0,-1)
+    addCell.textContent = tagData.get('tag') // Add the tag in the cell
 })

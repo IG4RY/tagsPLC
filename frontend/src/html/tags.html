@@ -21,29 +21,28 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/landPage.css"> <!--CSS Style call-->
-    <script type="text/javascript" src="/backend/src/js/landPage.js"></script> <!--JavaScript functions call-->>
+    <link rel="stylesheet" href="../css/tags.css"> <!--CSS Style call-->
+    <script type="text/javascript" src="/backend/src/js/tags.js"></script> <!--JavaScript functions call-->
     
     <title>Devices</title>
 </head>
 <body>
+    <nav class="menu">
+        <a href="tags.html">Tags</a>
+        <a href="addTag.html">Add Tags</a>
+        <a href="">Raza</a>
+        <a href="">Acerca</a>
+    </nav>
     <header>
-        <img src="/frontend/images/Osito.png" id="logoLP" alt="LucheStore Logo">
-        <h1>
-            <label id="companyName">Toman JKI</label>
-            <ul class="menu">
-                <li><a href="landPage">Luches</a></li>
-                <li><a href="addTag.html">AddTag</a></li>
-                <li><a href="">Raza</a></li>            
-                <li><a href="">Acerca</a></li>             
-            </ul>
-        </h1>
+        <img src="/frontend/images/logo/Toman Logo - Letters (Black Backgrund).PNG" id="companyLogo" alt="CompanyLogo">
+        <h1 id="companyName"></h1>
     </header>
 
     <div class="searchBox">
         <input type="text" id="searchBar" placeholder="Search device...">
         <button id="btnSearch"><img src="/frontend/images/tools/Lupa.png" alt="loupe"></button>
         <select id="searchFilter">
+            <option value="">Select an option</option>
             <optgroup label="Company">
                 <option value="abb">ABB (Asea Brown Boveri)</option>
                 <option value="allenBradley">Allen-Bradley</option>
@@ -78,15 +77,15 @@
         <div class="card">
             <div class="deviceHeader">
                 <div>
-                    <label class="deviceID">Device</label>
+                    <label class="deviceNIP">Device</label>
                     <br>
                     <label id="deviceName">Puentecito</label>
                 </div>
-                <button class="noBorderColor plush"><img src="/frontend/images/devices/centricaPwrBridge.png" alt="plush1"></button>
+                <button class="noBorderColor device"><img src="/frontend/images/devices/centricaPwrBridge.png" alt="Device"></button>
                 <div>
-                    <label class="deviceID">ID</label>
+                    <label class="deviceNIP">IP</label>
                     <br>
-                    <label id="idip">192.168.100.55 </label>
+                    <label id="deviceIP">192.168.100.55 </label>
                 </div>
             </div>
             
@@ -116,40 +115,27 @@
                             <option value="1.51">-1.5</option>
                         </select>
                     </th>
-                    <!--<th>Scale
-                        <select class="table-filter">
-                            <option value=""></option>
-                            <option value="ab">^</option>
-                            <option value="ba">v</option>
-                            <option value="1.5">+1.5</option>
-                            <option value="1.51">-1.5</option>
-                        </select>
-                    </th>-->
                 </thead>
                 <tbody>
                     <tr>
                         <td>Tag 1</td>
                         <td>Add</td>
                         <td>x</td>
-                        <!-- <td>y</td> -->
                     </tr>
                     <tr>
                         <td>Tag 2</td>
                         <td>Add</td>
                         <td>x</td>
-                        <!-- <td>y</td> -->
                     </tr>
                     <tr>
                         <td>Tag 3</td>
                         <td>Add</td>
                         <td>x</td>
-                        <!-- <td>y</td> -->
                     </tr>
                     <tr>
                         <td>Tag 4</td>
                         <td>Add</td>
                         <td>x</td>
-                        <!-- <td>y</td> -->
                     </tr>
                 </tbody>
               </table>
@@ -162,7 +148,7 @@
 
         <div class="card">
             <h2>Add Tag</h2>
-            <form action="./dataResume.html">
+            <form id="addTagForm">
                 <div class="fieldBox">
                     <label>Name</label>
                     <input type="text" class="inputLarge" id="name" name="tagName" placeholder="Tagcito" required>
@@ -175,52 +161,15 @@
     
                 <div class="fieldBox">
                     <label>Address</label>
-                    <input type="text" class="inputLarge" id="ip" name="tagIP" placeholder="192.168.100.55" required pattern="^((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$">
+                    <input type="text" class="inputLarge" id="ip" name="tagIP" placeholder="0x2001" required pattern="^((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$">
                 </div>
     
                 <hr>
-    <!-- 
-                <div class="fieldBox">
-                    <label>Data Type</label>
-                    <select class="inputLarge" id="ip" required>
-                        <optgroup label="Primitive">
-                            <option value="int">Int</option>
-                            <option value="float">Float</option>
-                            <option value="char">Double</option>
-                            <option value="bool">Boolean</option>
-                            <option value="date">Date</option>
-                            <option value="time">Time</option>
-                            <option value="datetime">DateTime </option>
-                        </optgroup>
-                        <optgroup label="Composite">
-                            <option value="string">String</option>
-                            <option value="array">Array</option>
-                            <option value="list">List</option>
-                            <option value="dictionary">Dictionary</option>
-                            <option value="objeto">Object</option>
-                            <option value="tuple">Tuple</option>
-                            <option value="function">Function</option>
-                            <option value="record">Record</option>
-                            <option value="set">Set</option>
-                        <optgroup label="Structured">
-                            <option value="enum">Enum</option>
-                            <option value="class">Class</option>
-                            <option value="delegate">Delegate</option>
-                            <option value="struct">Struct</option>
-                            <option value="union">Union</option>
-                            <option value="interface">Interface</option>
-                        </optgroup>
-                        <optgroup label="Others">
-                            <option value="null">Null</option>
-                            <option value="undefined">Undefined</option>
-                            <option value="void">Void</option>
-                        </optgroup>
-                    </select>
-                </div>
-    -->
+
                 <div class="fieldBox">
                     <label>Data Type</label>
                     <select class="inputLarge" id="type" name="tagType" required>
+                        <option value="">Select an option</option>
                         <optgroup label="Numeric">
                             <option value="int">INT</option> <!-- INT16, UINT16 -->
                             <option value="float">FLOAT</option> <!-- FLOAT32 -->
@@ -245,19 +194,6 @@
                             <option value="list">LIST</option>
                             <option value="tuple">TUPLE</option>
                         </optgroup>
-                        <!-- <optgroup label="Structured">
-                            <option value="enum">Enum</option>
-                            <option value="class">Class</option>
-                            <option value="delegate">Delegate</option>
-                            <option value="struct">Struct</option>
-                            <option value="union">Union</option>
-                            <option value="interface">Interface</option>
-                        </optgroup>
-                        <optgroup label="Others">
-                            <option value="null">Null</option>
-                            <option value="undefined">Undefined</option>
-                            <option value="void">Void</option>
-                        </optgroup> -->
                     </select>
                 </div>
                 
@@ -270,8 +206,7 @@
                     <label>Scan Rate</label>
                     <input class="inputShort" type="number" name="tagScan" min="500" value="1000" step="any" required>
                 </div>
-                
-                <input type="submit" class="addRemove" id="add" value="+">
+                <div class="addRemoveField"><input type="submit" class="addRemove" id="add" value="+"></div>
             </form>
         </div>
 
@@ -313,7 +248,7 @@
 
             <div class="seccion3">
                 <h2>LucheShop</h2>
-                <img id="companyLogo" src="/frontend/images/Osito.png" alt="Logo LucheShop">
+                <img id="companyLogo" src="/frontend/images/logo/Toman Logo - Letters (Transparent Background).PNG" alt="Company Logo">
                 <p>&copy; Derechos Reservados</p>
             </div>
         </div>
