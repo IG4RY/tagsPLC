@@ -22,7 +22,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/tags.css"> <!--CSS Style call-->
-    <script type="text/javascript" src="/backend/src/js/tags.js"></script> <!--JavaScript functions call-->
+    <script type="text/javascript" src="/backend/src/js/tags2.js"></script> <!--JavaScript functions call-->
     
     <title>Devices</title>
 </head>
@@ -91,83 +91,128 @@
             
             <table id="tagTable">
                 <thead>
-                    <th>Tag Name
-                        <select class="table-filter">
-                            <option value=""></option>
-                            <option value="az">A-Z</option>
-                            <option value="za">Z-A</option>
-                        </select>
-                    </th>
-                    <th>Address
-                        <select class="table-filter">
-                            <option value=""></option>
-                            <option value="ipa">A</option>
-                            <option value="ipb">B</option>
-                            <option value="ipc">C</option>
-                        </select>
-                    </th>
-                    <th>Value
-                        <select class="table-filter">
-                            <option value=""></option>
-                            <option value="ab">^</option>
-                            <option value="ba">v</option>
-                            <option value="1.5">+1.5</option>
-                            <option value="1.51">-1.5</option>
-                        </select>
-                    </th>
+                    <tr>
+                        <th>Tag Name
+                            <select class="table-filter">
+                                <option value=""></option>
+                                <option value="az">A-Z</option>
+                                <option value="za">Z-A</option>
+                            </select>
+                        </th>
+                        <th>Description
+                            <select class="table-filter">
+                                <option value=""></option>
+                                <optgroup label="Receives [Numeric]">
+                                    <option value="wgt">Weight</option>
+                                    <option value="mA">Measures mA</option>
+                                </optgroup>
+                            </select>
+                        </th>
+                        <th>Address
+                            <select class="table-filter">
+                                <option value=""></option>
+                                <option value="0x2">1000</option>
+                                <option value="0x2">2000</option>
+                                <option value="0x3">3000</option>
+                            </select>
+                        </th>
+                        <th>DataType
+                            <select class="inputLarge">
+                                <option value=""></option>
+                                <optgroup label="Numeric">
+                                    <option value="int">INT</option> <!-- INT16, UINT16 -->
+                                    <option value="float">FLOAT</option> <!-- FLOAT32 -->
+                                    <option value="real">REAL</option>
+                                </optgroup>
+                                <optgroup label="Logic/Binary">
+                                    <option value="bool">BOOL</option>
+                                    <option value="byn">BYTEA</option>
+                                </optgroup>
+                                <optgroup label="Text">
+                                    <option value="char">CHAR</option>
+                                    <option value="str">STRING</option>
+                                </optgroup>
+                                <optgroup label="Date/Time">
+                                    <option value="date">DATE</option>
+                                    <option value="time">TIME</option>
+                                    <option value="datime">DATETIME</option>
+                                    <option value="intvl">INTERVAL</option>
+                                </optgroup>
+                                <optgroup label="Compuestos">
+                                    <option value="array">ARRAY</option>
+                                    <option value="list">LIST</option>
+                                    <option value="tuple">TUPLE</option>
+                                </optgroup>
+                            </select>
+                        </th>
+                        <th>Scale
+                            <select class="table-filter">
+                                <option value=""></option>
+                                <option value="x1">1x</option>
+                                <option value="x1.5">1.5x</option>
+                                <option value="x2">2x</option>
+                              </select> 
+                        </th>
+                        <th>Scan Rate
+                            <select class="table-filter">
+                                <option value=""></option>
+                                <option value="x1">1x</option>
+                                <option value="x1.5">1.5x</option>
+                                <option value="x2">2x</option>
+                              </select> 
+                        </th>
+                        <th>Value
+                            <select class="table-filter">
+                                <option value=""></option>
+                                <option value="ab">^</option>
+                                <option value="ba">v</option>
+                                <option value="1.5">+1.5</option>
+                                <option value="1.51">-1.5</option>
+                            </select>
+                        </th>
+                        <th></th> <!-- Edit and delete buttons -->
+                    </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>Tag 1</td>
-                        <td>Add</td>
-                        <td>x</td>
-                    </tr>
-                    <tr>
-                        <td>Tag 2</td>
-                        <td>Add</td>
-                        <td>x</td>
-                    </tr>
-                    <tr>
-                        <td>Tag 3</td>
-                        <td>Add</td>
-                        <td>x</td>
-                    </tr>
-                    <tr>
-                        <td>Tag 4</td>
-                        <td>Add</td>
-                        <td>x</td>
-                    </tr>
+
                 </tbody>
               </table>
 
-              <div class="addRemoveField">
+              <!-- <div class="addRemoveField">
                 <a href="addTag.html"><button class="addRemove" id="add">+</button></a>
                 <a href="addTag.html"><button class="addRemove" id="remove">—</button></a>
-              </div>
+              </div> -->
         </div>
 
         <div class="card">
             <h2>Add Tag</h2>
-            <form id="addTagForm">
+            <form onsubmit="onFormSubmit()" autocomplete="off">
                 <div class="fieldBox">
-                    <label>Name</label>
+                    <label for="name">Name</label>
                     <input type="text" class="inputLarge" id="name" name="tagName" placeholder="Tagcito" required>
                 </div>
     
                 <div class="fieldBox">
-                    <label>Description</label>
-                    <textarea class="inputLarge" id="desc" name="tagDesc" cols="20" rows="4" wrap="hard" placeholder="Mide mA" required></textarea>
+                    <label for="dscSel">Description</label>
+                    <select class="inputLarge" id="dscSel" name="tagDescSelect" required>
+                        <option value="">Select an option</option>
+                        <optgroup label="Receives [Numeric]">
+                            <option value="wgt">Weight</option>
+                            <option value="mA">Measures mA</option>
+                            <option value="otr">Other</option>
+                        </optgroup>
+                    </select>
+                    <textarea class="inputLarge" id="dscOth" name="tagDescOther" cols="20" rows="1" wrap="hard" placeholder="Measures mA"></textarea>
                 </div>
-    
                 <div class="fieldBox">
-                    <label>Address</label>
-                    <input type="text" class="inputLarge" id="ip" name="tagIP" placeholder="0x2001" required pattern="^((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$">
+                    <label for="addr">Address</label>
+                    <input type="text" class="inputLarge" id="addr" name="tagAddress" placeholder="0x2001" required>
                 </div>
     
                 <hr>
 
                 <div class="fieldBox">
-                    <label>Data Type</label>
+                    <label for="type">Data Type</label>
                     <select class="inputLarge" id="type" name="tagType" required>
                         <option value="">Select an option</option>
                         <optgroup label="Numeric">
@@ -198,13 +243,20 @@
                 </div>
                 
                 <div class="fieldBox">
-                    <label>Scale</label>
-                    <input class="inputShort" type="number" name="tagScale" min="1" value="1" step=".01" required>
+                    <label for="scl">Scale</label>
+                    <label class="blueX">x</label>
+                    <input class="inputShort" type="number" id="scl" name="tagScale" min="1" value="1" step=".01" required>
                 </div>
     
                 <div class="fieldBox">
-                    <label>Scan Rate</label>
-                    <input class="inputShort" type="number" name="tagScan" min="500" value="1000" step="any" required>
+                    <label for="scn">Scan Rate</label>
+                    <label class="blueX">ms</label>
+                    <input class="inputShort" type="number" id="scn" name="tagScan" min="500" value="1000" step="any" required>
+                </div>
+
+                <div class="fieldBox">
+                    <label>Value</label>
+                    <input class="inputShort" type="number" id="val" name="tagValue" value="1000" readonly>
                 </div>
                 <div class="addRemoveField"><input type="submit" class="addRemove" id="add" value="+"></div>
             </form>
