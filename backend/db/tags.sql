@@ -5,40 +5,31 @@ USE tagsPLC;
 
 /* DDL - Tables */
 
-    /* Strong tables */
+    /* Strong table(s) */
 
-        CREATE TABLE Devices
-        (
-            ID_Device INT (11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+        CREATE TABLE Devices(
+            ID INT(3) NOT NULL AUTO_INCREMENT PRIMARY KEY,
 
-            tutorName VARCHAR(30),
-            tutorPassword BLOB
-        ) ENGINE=INNODB CHARSET=UTF8MB4;
-
-        CREATE TABLE Student
-        (
-            ID_Student INT (11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
-
-            studentName VARCHAR(30),
-            studentPassword BLOB
+            name VARCHAR(15),
+            description TEXT,
+            type ENUM('Sensor', 'Actuador', 'Controlador') DEFAULT 'Sensor',
+            model VARCHAR(15),
+            status ENUM('Activo', 'Inactivo', 'Mantenimiento') DEFAULT 'Activo',
         ) ENGINE=INNODB CHARSET=UTF8MB4;
 
 
-    /* Weak tables */
+    /* Weak table(s) */
 
-        CREATE TABLE Date
-        (
-            ID_Date INT (11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
-
-            ID_Student INT(11), INDEX(ID_Student),
-            FOREIGN KEY (ID_Student) REFERENCES Student(ID_Student) ON UPDATE CASCADE ON DELETE RESTRICT,
-
-            ID_Tutor INT(11), INDEX(ID_Tutor),
-            FOREIGN KEY (ID_Tutor) REFERENCES Tutor(ID_Tutor) ON UPDATE CASCADE ON DELETE RESTRICT,
-
-            dateDay VARCHAR(9),
-            dateHour VARCHAR(5),
-            dateSubject VARCHAR(60)
+        CREATE TABLE Tag(
+            ID_Device INT(3), INDEX(ID_Device), FOREIGN KEY (ID_Device) REFERENCES Devices(ID) ON UPDATE CASCADE ON DELETE RESTRICT,
+            ID INT(5) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+            
+            name VARCHAR(15),
+            description TEXT,
+            address VARCHAR(4)
+            scale FLOAT(2),
+            scanRate FLOAT(4),
+            value FLOAT(4)
         ) ENGINE=INNODB CHARSET=UTF8MB4;
 
         SHOW TABLES;
@@ -47,13 +38,13 @@ USE tagsPLC;
 
     /* Insertions */
 
-        /* Students insertions */
-            INSERT INTO Student (studentName, studentPassword) VALUES
+        /* Devices insertions */
+            INSERT INTO Devices (studentName, studentPassword) VALUES
             ("Arenita", MD5(111)),
             ("Bob", MD5(222));
 
-        /* Tutor insertions */
-            INSERT INTO Tutor (tutorName, tutorPassword) VALUES
+        /* Tag insertions */
+            INSERT INTO Tag (tutorName, tutorPassword) VALUES
             ("Jirafales", MD5(333)),
             ("Canuta", MD5(444));
 

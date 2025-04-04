@@ -22,7 +22,7 @@ function readFormData() {
     formData["tagAddress"] = document.getElementById("addr").value
     formData["tagType"] = document.getElementById("type").value
     formData["tagScale"] = document.getElementById("scl").value
-    formData["tagScan"] = document.getElementById("scn").value
+    formData["tagRate"] = document.getElementById("rte").value
     formData["tagValue"] = document.getElementById("val").value
 
     return formData
@@ -37,12 +37,14 @@ function insertNewRecord(data) {
     cell3 = newRow.insertCell(2); cell3.innerHTML = data.tagAddress
     cell4 = newRow.insertCell(3); cell4.innerHTML = data.tagType
     cell5 = newRow.insertCell(4); cell5.innerHTML = data.tagScale
-    cell6 = newRow.insertCell(5); cell6.innerHTML = data.tagScan
+    cell6 = newRow.insertCell(5); cell6.innerHTML = data.tagRate
     cell7 = newRow.insertCell(6); cell7.innerHTML = data.tagValue
 
-    cell8 = newRow.insertCell(7);
-    cell8.innerHTML = `<a onClick="onEdit(this)">*</a>
-    <br> <a onClick="onDelete(this)">—</a>`;
+    cell8 = newRow.insertCell(7)
+    cell8.innerHTML =
+    `<a onClick="onEdit(this)">Edit</a>
+    <br>
+    <a onClick="onDelete(this)">Remove</a>`
 }
 
 function resetForm() {
@@ -51,7 +53,7 @@ function resetForm() {
     document.getElementById("addr").value = ""
     document.getElementById("type").value = ""
     document.getElementById("scl").value = "1" // Minimum value
-    document.getElementById("scn").value = "1000" // Minimum value
+    document.getElementById("rte").value = "1000" // Minimum value
     document.getElementById("val").value = ""
     
     selectedRow = null
@@ -64,7 +66,7 @@ function onEdit(td) {
     document.getElementById("addr").value = selectedRow.cells[2].innerHTML
     document.getElementById("type").value = selectedRow.cells[3].innerHTML
     document.getElementById("scl").value = selectedRow.cells[4].innerHTML
-    document.getElementById("scn").value = selectedRow.cells[5].innerHTML
+    document.getElementById("rte").value = selectedRow.cells[5].innerHTML
     document.getElementById("val").value = selectedRow.cells[6].innerHTML
 }
 
@@ -74,7 +76,7 @@ function updateRecord(formData) {
     selectedRow.cells[2].innerHTML = formData.tagAddress
     selectedRow.cells[3].innerHTML = formData.tagType
     selectedRow.cells[4].innerHTML = formData.tagScale
-    selectedRow.cells[5].innerHTML = formData.tagScan
+    selectedRow.cells[5].innerHTML = formData.tagRate
     selectedRow.cells[6].innerHTML = formData.tagValue
 }
 

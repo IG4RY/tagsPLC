@@ -71,9 +71,10 @@
         </select>
     </div>
 
+    <button class="btn" id="addDevice">Add Device</button>
+
     <div class="tagBox">
         <button class="carouselArrow" id="carouselLeft"></button>
-
         <div class="card">
             <div class="deviceHeader">
                 <div>
@@ -94,15 +95,17 @@
             <table id="tagTable">
                 <thead>
                     <tr>
-                        <th>Tag Name
-                            <select class="table-filter">
+                        <th>
+                            <label for="thTagNme" class="thTag">Tag Name</label>
+                            <select id="thTagNme">
                                 <option value=""></option>
                                 <option value="az">A-Z</option>
                                 <option value="za">Z-A</option>
                             </select>
                         </th>
-                        <th>Description
-                            <select class="table-filter">
+                        <th>
+                            <label for="thTagDsc" class="thTag">Description</label>
+                            <select id="thTagDsc">
                                 <option value=""></option>
                                 <optgroup label="Receives [Numeric]">
                                     <option value="wgt">Weight</option>
@@ -110,16 +113,18 @@
                                 </optgroup>
                             </select>
                         </th>
-                        <th>Address
-                            <select class="table-filter">
+                        <th>
+                            <label for="thTagAddr" class="thTag">Address</label>
+                            <select id="thTagAddr">
                                 <option value=""></option>
                                 <option value="0x2">1000</option>
                                 <option value="0x2">2000</option>
                                 <option value="0x3">3000</option>
                             </select>
                         </th>
-                        <th>DataType
-                            <select class="inputLarge">
+                        <th>
+                            <label for="thTagDT" class="thTag">Data Type</label>
+                            <select id="thTagDT">
                                 <option value=""></option>
                                 <optgroup label="Numeric">
                                     <option value="int">INT</option> <!-- INT16, UINT16 -->
@@ -147,24 +152,27 @@
                                 </optgroup>
                             </select>
                         </th>
-                        <th>Scale
-                            <select class="table-filter">
+                        <th>
+                            <label for="thTagScl" class="thTag">Scale</label>
+                            <select id="thTagScl">
                                 <option value=""></option>
                                 <option value="x1">1x</option>
                                 <option value="x1.5">1.5x</option>
                                 <option value="x2">2x</option>
                               </select> 
                         </th>
-                        <th>Scan Rate
-                            <select class="table-filter">
+                        <th>
+                            <label for="thTagRte" class="thTag">Rate</label>
+                            <select id="thTagRte">
                                 <option value=""></option>
                                 <option value="x1">1x</option>
                                 <option value="x1.5">1.5x</option>
                                 <option value="x2">2x</option>
                               </select> 
                         </th>
-                        <th>Value
-                            <select class="table-filter">
+                        <th>
+                            <label for="thTagVal" class="thTag">Value</label>
+                            <select id="thTagVal">
                                 <option value=""></option>
                                 <option value="ab">^</option>
                                 <option value="ba">v</option>
@@ -176,7 +184,7 @@
                     </tr>
                 </thead>
                 <tbody>
-
+                    <!-- Form content -->
                 </tbody>
               </table>
 
@@ -204,8 +212,8 @@
                             <option value="otr">Other</option>
                         </optgroup>
                     </select>
-                    <textarea class="inputLarge" id="dscOth" name="tagDescOther" cols="20" rows="1" wrap="hard" placeholder="Measures mA"></textarea>
                 </div>
+                <div class="fieldBox"><textarea class="inputLarge" id="dscOth" name="tagDescOther" cols="20" rows="1" wrap="hard" placeholder="Measures mA"></textarea></div>
                 <div class="fieldBox">
                     <label for="addr">Address</label>
                     <input type="text" class="inputLarge" id="addr" name="tagAddress" placeholder="0x2001" required>
@@ -247,13 +255,13 @@
                 <div class="fieldBox">
                     <label for="scl">Scale</label>
                     <label class="blueX">x</label>
-                    <input class="inputShort" type="number" id="scl" name="tagScale" min="1" value="1" step=".01" required>
+                    <input class="inputShort" type="number" id="scl" name="tagScale" min="1" value="1" step=".25" required>
                 </div>
     
                 <div class="fieldBox">
-                    <label for="scn">Scan Rate</label>
+                    <label for="rte">Rate</label>
                     <label class="blueX">ms</label>
-                    <input class="inputShort" type="number" id="scn" name="tagScan" min="500" value="1000" step="any" required>
+                    <input class="inputShort" type="number" id="rte" name="tagRate" min="500" value="1000" step="500" required>
                 </div>
 
                 <div class="fieldBox">
